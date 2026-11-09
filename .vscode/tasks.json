@@ -2,11 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "node",
+      "label": "install-root-modules",
       "type": "shell",
-      "command": "npm install -s",
-      "isBackground": true,
-      "problemMatcher": [],
+      "command": "npm install --silent --no-progress",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "windows": {
         "options": {
           "shell": {
@@ -15,7 +16,6 @@
           }
         }
       },
-
       "linux": {
         "options": {
           "shell": {
@@ -24,7 +24,6 @@
           }
         }
       },
-
       "osx": {
         "options": {
           "shell": {
@@ -33,24 +32,16 @@
           }
         }
       },
-
       "runOptions": {
         "runOn": "folderOpen"
       },
-      
       "presentation": {
-        "reveal": "never",
+        "reveal": "silent",
         "echo": false,
         "focus": false,
-        "panel": "dedicated",
+        "panel": "new",
         "showReuseMessage": false,
-        "close": true
-      },
-      "options": {
-        "cwd": "${workspaceFolder}",
-        "env": {
-          "PORT": "7777"
-        }
+        "clear": true
       }
     },
     {
